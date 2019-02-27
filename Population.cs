@@ -6,7 +6,12 @@ namespace PadawansTask1
     {
         public static int GetYears(int initialPopulation, double percent, int visitors, int currentPopulation)
         { 
-            if(percent < 0)
+            if(percent <= 0)
+            {
+                throw new ArgumentException(); 
+            }
+
+            if(currentPopulation <= 0 || initialPopulation <= 0)
             {
                 throw new ArgumentException(); 
             }
